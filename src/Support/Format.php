@@ -120,7 +120,7 @@ class Format implements ResponseFormat
             $data instanceof JsonResource => $this->jsonResource($data),
             $data instanceof AbstractPaginator || $data instanceof AbstractCursorPaginator => $this->paginator($data),
             $data instanceof Arrayable || (is_object($data) && method_exists($data, 'toArray')) => $data->toArray(),
-            empty($data) => (object) $data,
+            empty($data) => (object)$data,
             default => Arr::wrap($data)
         };
     }
@@ -128,7 +128,7 @@ class Format implements ResponseFormat
     /**
      * Format return message.
      */
-    protected function formatMessage(int $code, string $message = ''): ?string
+    protected function formatMessage(int|string $code, string $message = ''): ?string
     {
         $localizationKey = implode('.', [Config::get('response.locale', 'enums'), $code]);
 
@@ -141,7 +141,7 @@ class Format implements ResponseFormat
     /**
      * Format business code.
      */
-    protected function formatBusinessCode(int|\BackedEnum $code): int
+    protected function formatBusinessCode(int|\BackedEnum $code): int|string
     {
         return $code instanceof \BackedEnum ? $code->value : $code;
     }
@@ -161,9 +161,9 @@ class Format implements ResponseFormat
     /**
      * Http status code.
      */
-    protected function formatStatusCode(int $code, $oriData): int
+    protected function formatStatusCode(int|string $code, $oriData): int
     {
-        return (int) substr(is_null($oriData) ? (Config::get('response.error_code') ?: $code) : $code, 0, 3);
+        return (int)substr(is_null($oriData) ? (Config::get('response.error_code') ?: $code) : $code, 0, 3);
     }
 
     /**
@@ -226,7 +226,7 @@ class Format implements ResponseFormat
      */
     protected function formatError(?array $error): object|array
     {
-        return $error ?: (object) [];
+        return $error ?: (object)[];
     }
 
     /**
