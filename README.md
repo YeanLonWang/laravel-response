@@ -1,24 +1,7 @@
 <h1 align="center"> laravel-response </h1>
 
-[简体中文](README.md) | [ENGLISH](README-EN.md)
-
 > 为 Laravel 和 Lumen API 项目提供一个规范统一的响应数据格式。
 
-![Test](https://github.com/Jiannei/laravel-response/workflows/Test/badge.svg)
-[![StyleCI](https://github.styleci.io/repos/316969462/shield?branch=main&style=flat)](https://github.styleci.io/repos/316969462?branch=main&style=flat)
-[![Latest Stable Version](http://poser.pugx.org/jiannei/laravel-response/v)](https://packagist.org/packages/jiannei/laravel-response)
-[![Total Downloads](http://poser.pugx.org/jiannei/laravel-response/downloads)](https://packagist.org/packages/jiannei/laravel-response)
-[![Monthly Downloads](http://poser.pugx.org/jiannei/laravel-response/d/monthly)](https://packagist.org/packages/jiannei/laravel-response)
-[![License](http://poser.pugx.org/jiannei/laravel-response/license)](https://packagist.org/packages/jiannei/laravel-response)
-
-## 社区讨论文章
-
-- [是时候使用 Lumen 8 + API Resource 开发项目了！](https://learnku.com/articles/45311)
-- [教你更优雅地写 API 之「路由设计」](https://learnku.com/articles/45526)
-- [教你更优雅地写 API 之「规范响应数据」](https://learnku.com/articles/52784)
-- [教你更优雅地写 API 之「枚举使用」](https://learnku.com/articles/53015)
-- [教你更优雅地写 API 之「记录日志」](https://learnku.com/articles/53669)
-- [教你更优雅地写 API 之「灵活地任务调度」](https://learnku.com/articles/58403)
 
 ## 介绍
 
@@ -44,43 +27,10 @@
 
 ## 安装
 
-支持 Laravel 5.5.* ~ Laravel 11.* 版本，自定义业务操作码部分依赖于  [jiannei/laravel-enum](https://github.com/Jiannei/laravel-enum)，需要先进行安装。
-
-| laravel 版本 | lumen 版本   | response 版本 | enum 版本 |
-|------------|------------|-------------|---------|
-| 5.5.*      | 5.5.*      | ~1.8        | ~1.4    |
-| 6.*        | 6.*        | ^2.0        | ~1.4    |
-| 7.*        | 7.*        | ^3.0        | ^2.0    |
-| 8.*        | 8.*        | ^4.0        | ^3.0    |
-| 9.* - 10.* | 9.* - 10.* | ^5.0        | ^3.0    |
-| 11.* | 不支持        | ^6.0        | ^4.0    |
+支持 Laravel 11.* 版本，自定义业务操作码部分依赖于  [jiannei/laravel-enum](https://github.com/Jiannei/laravel-enum)，需要先进行安装。
 
 
 ```shell
-# laravel 5.5
-
-composer require jiannei/laravel-response "~1.8" -vvv
-composer require jiannei/laravel-enum "~1.4" -vvv # 可选
-
-# laravel 6.x
-
-composer require jiannei/laravel-response "^2.0" -vvv
-composer require jiannei/laravel-enum "~1.4" -vvv # 可选
-
-# laravel 7.x
-
-composer require jiannei/laravel-response "^3.0" -vvv
-composer require jiannei/laravel-enum "^2.0" -vvv # 可选
-
-# laravel 8.x
-
-composer require jiannei/laravel-response "^4.0" -vvv
-composer require jiannei/laravel-enum "^3.0" -vvv # 可选
-
-# laravel 9.x - 10.x
-
-composer require jiannei/laravel-response "^5.0" -vvv
-composer require jiannei/laravel-enum "^3.0" -vvv # 可选
 
 # laravel 11.x
 
@@ -95,7 +45,7 @@ composer require jiannei/laravel-enum "^4.0" -vvv # 可选
 - 发布配置文件
 
 ```shell
-$ php artisan vendor:publish --provider="Jiannei\Response\Laravel\Providers\LaravelServiceProvider"
+ php artisan vendor:publish --provider="Jiannei\Response\Laravel\Providers\LaravelServiceProvider"
 ```
 
 - 格式化异常响应（laravel 11 可省略这一步）
@@ -599,15 +549,8 @@ return [
 ];
 ```
 
-## 由 JetBrains 赞助
-
-非常感谢 Jetbrains 为我提供的 IDE 开源许可，让我完成此项目和其他开源项目上的开发工作。
-
-[![](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)](https://www.jetbrains.com/?from=https://github.com/jiannei)
-
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/jiannei/laravel-response.svg)](https://starchart.cc/jiannei/laravel-response)
+## 项目说明
+本项目基于 [laravel-response](https://github.com/jiannei/laravel-response) 项目构建，感谢 [jiannei](https://github.com/jiannei) 的贡献。
 
 ## 协议
 
